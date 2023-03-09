@@ -1,9 +1,8 @@
-import { legacy_createStore as createStore } from 'redux';
-import { createSlice } from '@reduxjs/toolkit';
+import { configureStore, createSlice } from '@reduxjs/toolkit';
 
 const INITIAL_STATE = { counter: 0, showCounter: true };
 
-createSlice({
+const counterSlice = createSlice({
   name: 'counter',
   initialState: INITIAL_STATE,
   reducers: {
@@ -22,38 +21,6 @@ createSlice({
   },
 });
 
-const counterReducer = (state = INITIAL_STATE, action) => {
-  switch (action.type) {
-    case 'INCREMENT': {
-      return {
-        ...state,
-        counter: state.counter + 1,
-      };
-    }
-    case 'DECREMENT': {
-      return {
-        ...state,
-        counter: state.counter - 1,
-      };
-    }
-    case 'INCREASE': {
-      return {
-        ...state,
-        counter: state.counter + action.payload,
-      };
-    }
-    case 'TOGGLE': {
-      return {
-        ...state,
-        showCounter: !state.showCounter,
-      };
-    }
-    default: {
-      return state;
-    }
-  }
-};
-
-const store = createStore(counterReducer);
+const store = configureStore({ reducer: counterSlice.reducer });
 
 export default store;
