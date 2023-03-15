@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { uiActions } from './components/store/ui-slice';
+import { uiActions } from './store/ui-slice';
 
 import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
