@@ -19,7 +19,12 @@ export const fetchCartData = () => {
 
     try {
       const cartData = await fetchData();
-      dispatch(cartActions.replaceCart(cartData));
+      dispatch(
+        cartActions.replaceCart({
+          items: cartData.items || [],
+          totalQuantity: cartData.totalQuantity,
+        })
+      );
     } catch (error) {
       dispatch(
         uiActions.showNotification({
@@ -45,7 +50,10 @@ export const sendCartData = cartData => {
     const sendRequest = async () => {
       const response = await fetch(FIREBASE_URL + '/cart.json', {
         method: 'PUT',
-        body: JSON.stringify(cartData),
+        body: JSON.stringify({
+          items: cartData.items,
+          totalQuantity: cartData.totalQuantity,
+        }),
       });
 
       if (!response.ok) {
