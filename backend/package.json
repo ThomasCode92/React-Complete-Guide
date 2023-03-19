@@ -1,0 +1,15 @@
+{
+  "name": "rr-events-backend",
+  "version": "1.0.0",
+  "description": "API for the RR-Events Frontend App",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "ThomasCode92",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  }
+}
