@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { useParams } from 'react-router-dom';
 
 function EventDetailPage() {
-  return <h1>Event Detail</h1>;
+  const params = useParams();
+
+  return (
+    <Fragment>
+      <h1>Event Detail</h1>
+      <p>Event ID {params.eventId}</p>
+    </Fragment>
+  );
 }
 
 export default EventDetailPage;
