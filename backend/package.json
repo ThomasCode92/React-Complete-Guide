@@ -9,7 +9,9 @@
   "author": "ThomasCode92",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
     "uuid": "^9.0.0"
   }
 }
