@@ -15,8 +15,12 @@ function ErrorPage() {
     message = 'Could not find resource or page.';
   }
 
-  if (error.status === 500) {
-    message = JSON.parse(error.data).message;
+  if (error.status === 500 || error.status === 422) {
+    if (typeof error.data === 'object') {
+      message = error.data.message;
+    } else {
+      message = JSON.parse(error.data).message;
+    }
   }
 
   return (

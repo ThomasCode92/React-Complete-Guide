@@ -4,7 +4,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import RootLayout from './pages/Root';
 import ErrorPage from './pages/Error';
 import HomePage from './pages/Home';
-import AuthenticationPage from './pages/Authentication';
+import AuthenticationPage, {
+  action as authAction,
+} from './pages/Authentication';
 import EventsRootLayout from './pages/EventsRoot';
 import EventsPage, { loader as eventsLoader } from './pages/Events';
 import EventDetailPage, {
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'auth', element: <AuthenticationPage /> },
+      { path: 'auth', element: <AuthenticationPage />, action: authAction },
       {
         path: 'events',
         element: <EventsRootLayout />,
