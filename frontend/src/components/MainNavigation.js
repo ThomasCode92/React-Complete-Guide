@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Form, NavLink } from 'react-router-dom';
 
 import NewsletterSignup from './NewsletterSignup';
 import classes from './MainNavigation.module.css';
@@ -49,6 +49,11 @@ function MainNavigation() {
             >
               Authentication
             </NavLink>
+          </li>
+          <li>
+            <Form action="/auth/logout" method="POST">
+              <button>Logout</button>
+            </Form>
           </li>
         </ul>
       </nav>

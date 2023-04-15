@@ -7,6 +7,7 @@ import HomePage from './pages/Home';
 import AuthenticationPage, {
   action as authAction,
 } from './pages/Authentication';
+import { action as logoutAction } from './pages/Logout';
 import EventsRootLayout from './pages/EventsRoot';
 import EventsPage, { loader as eventsLoader } from './pages/Events';
 import EventDetailPage, {
@@ -25,7 +26,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'auth', element: <AuthenticationPage />, action: authAction },
+      {
+        path: 'auth',
+        element: <AuthenticationPage />,
+        action: authAction,
+        children: [{ path: 'logout', action: logoutAction }],
+      },
       {
         path: 'events',
         element: <EventsRootLayout />,
