@@ -19,11 +19,15 @@ import NewEventPage from './pages/NewEvent';
 import NewsletterPage, { action as newsletterAction } from './pages/Newsletter';
 import { action as manipulateEventAction } from './components/EventForm';
 
+import { tokenLoader } from './util/auth';
+
 const router = createBrowserRouter([
   {
     path: '/',
+    id: 'root',
     element: <RootLayout />,
     errorElement: <ErrorPage />,
+    loader: tokenLoader,
     children: [
       { index: true, element: <HomePage /> },
       {
