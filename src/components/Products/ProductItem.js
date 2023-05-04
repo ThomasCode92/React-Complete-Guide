@@ -1,16 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
 import Card from '../UI/Card';
 import './ProductItem.css';
-import { toggleFav } from '../../store/actions/products';
 
 const ProductItem = props => {
-  const dispatch = useDispatch();
-
-  const toggleFavHandler = () => {
-    dispatch(toggleFav(props.id));
-  };
+  const toggleFavHandler = () => {};
 
   return (
     <Card style={{ marginBottom: '1rem' }}>
