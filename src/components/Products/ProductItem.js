@@ -6,7 +6,9 @@ import './ProductItem.css';
 import useStore from '../../hooks/store';
 
 const ProductItem = props => {
-  const [, dispatch] = useStore();
+  const [, dispatch] = useStore(false);
+
+  console.log('Rendering');
 
   const toggleFavHandler = () => {
     dispatch('TOGGLE_FAV', props.id);
@@ -28,4 +30,4 @@ const ProductItem = props => {
   );
 };
 
-export default ProductItem;
+export default React.memo(ProductItem);
