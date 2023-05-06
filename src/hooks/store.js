@@ -33,7 +33,7 @@ const useStore = () => {
 export const initStore = (userActions, initialState) => {
   if (initialState) {
     globalState = { ...globalState, ...initialState };
-    actions = { ...actions, userActions };
+    actions = { ...actions, ...userActions };
   }
 };
 
