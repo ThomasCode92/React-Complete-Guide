@@ -3,7 +3,12 @@ import React from 'react';
 import Post from './components/Post';
 
 function App() {
-  return <Post />;
+  return (
+    <main>
+      <Post />
+      <Post />
+    </main>
+  );
 }
 
 export default App;
