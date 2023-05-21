@@ -1,14 +1,15 @@
 import React from 'react';
 
-const names = ['Thomas', 'Maximilian'];
+type PostProps = {
+  author: string;
+  body: string;
+};
 
-function Post() {
-  const randomName = Math.random() > 0.5 ? names[0] : names[1];
-
+function Post(props: PostProps) {
   return (
     <div>
-      <p>{randomName}</p>
-      <p>React.js is awesome!</p>
+      <p>{props.author}</p>
+      <p>{props.body}</p>
     </div>
   );
 }
