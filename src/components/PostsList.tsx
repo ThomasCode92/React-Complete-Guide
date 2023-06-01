@@ -5,14 +5,14 @@ import Post from './Post';
 import classes from './PostsList.module.css';
 import Modal from './UI/Modal';
 
-function PostsList() {
-  const [modalIsVisible, setModalIsVisible] = useState(true);
+type PostsListProps = {
+  modalIsVisible: boolean;
+  onCloseModal: () => void;
+};
+
+function PostsList({ modalIsVisible, onCloseModal }: PostsListProps) {
   const [enteredBody, setEnteredBody] = useState('');
   const [enteredAuthor, setEnteredAuthor] = useState('');
-
-  const hideModalHandler = () => {
-    setModalIsVisible(false);
-  };
 
   const bodyChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setEnteredBody(event.target.value);
@@ -22,10 +22,14 @@ function PostsList() {
     setEnteredAuthor(event.target.value);
   };
 
+  const closeModalHandler = () => {
+    onCloseModal();
+  };
+
   return (
     <Fragment>
       {modalIsVisible && (
-        <Modal onClose={hideModalHandler}>
+        <Modal onClose={closeModalHandler}>
           <NewPost
             onBodyChange={bodyChangeHandler}
             onAuthorChange={authorChangeHandler}
