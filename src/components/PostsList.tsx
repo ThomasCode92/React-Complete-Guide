@@ -33,6 +33,7 @@ function PostsList({ modalIsVisible, onCloseModal }: PostsListProps) {
           <NewPost
             onBodyChange={bodyChangeHandler}
             onAuthorChange={authorChangeHandler}
+            onCancel={closeModalHandler}
           />
         </Modal>
       )}
