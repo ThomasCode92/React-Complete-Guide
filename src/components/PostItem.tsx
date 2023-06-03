@@ -1,13 +1,13 @@
 import React from 'react';
 
-import classes from './Post.module.css';
+import classes from './PostItem.module.css';
 
 type PostProps = {
   author: string;
   body: string;
 };
 
-function Post(props: PostProps) {
+function PostItem(props: PostProps) {
   return (
     <li className={classes.post}>
       <p className={classes.author}>{props.author}</p>
@@ -16,4 +16,4 @@ function Post(props: PostProps) {
   );
 }
 
-export default Post;
+export default PostItem;

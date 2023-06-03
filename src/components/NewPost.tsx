@@ -3,15 +3,16 @@ import React, { ChangeEvent, FormEvent, useState } from 'react';
 import classes from './NewPost.module.css';
 
 type NewPostProps = {
+  onAddPost: (postData: IPostData) => void;
   onCancel: () => void;
 };
 
-interface IPostData {
+export interface IPostData {
   body: string;
   author: string;
 }
 
-function NewPost(props: NewPostProps) {
+function NewPost({ onAddPost, onCancel }: NewPostProps) {
   const [enteredBody, setEnteredBody] = useState('');
   const [enteredAuthor, setEnteredAuthor] = useState('');
 
@@ -32,7 +33,9 @@ function NewPost(props: NewPostProps) {
     };
 
     console.log(postData);
-    props.onCancel();
+
+    onAddPost(postData);
+    onCancel();
   };
 
   return (
@@ -46,7 +49,7 @@ function NewPost(props: NewPostProps) {
         <input type="text" id="name" required onChange={authorChangeHandler} />
       </p>
       <p className={classes.actions}>
-        <button type="button" onClick={props.onCancel}>
+        <button type="button" onClick={onCancel}>
           Cancel
         </button>
         <button>Submit</button>
