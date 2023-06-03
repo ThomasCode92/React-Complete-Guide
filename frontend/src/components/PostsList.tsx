@@ -17,6 +17,13 @@ function PostsList({ modalIsVisible, onCloseModal }: PostsListProps) {
 
   const addPostHandler = (postData: IPostData) => {
     const post = new Post(postData.body, postData.author);
+
+    fetch('/api/posts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(post),
+    });
+
     setPosts(prevPosts => [...prevPosts, post]);
   };
 
