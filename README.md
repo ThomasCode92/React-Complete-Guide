@@ -8,5 +8,7 @@ It is used to summarize the basics about [React](https://react.dev/), some kind 
 This application is bootstrapped with [vite](https://vitejs.dev/) and makes use of [TypeScript](https://www.typescriptlang.org/).
 
 **View the application**<br />
-Run the development server with `npm run dev`<br />
+First start the (dummy) backend with the following command `cd backend && npm run dev`.<br />
+To start the React app, open a new terminal and run `cd frontend && npm run dev`<br />
+
 Open your web browser at [http://localhost:5173](http://localhost:5173).
