@@ -17,6 +17,7 @@ type JSONResponse = {
 };
 
 function PostsList({ modalIsVisible, onCloseModal }: PostsListProps) {
+  const [isLoading, setIsLoading] = useState(false);
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
@@ -25,8 +26,10 @@ function PostsList({ modalIsVisible, onCloseModal }: PostsListProps) {
       const responseData: JSONResponse = await response.json();
 
       setPosts(responseData.posts);
+      setIsLoading(false);
     }
 
+    setIsLoading(true);
     fetchPosts();
   }, []);
 
@@ -53,17 +56,22 @@ function PostsList({ modalIsVisible, onCloseModal }: PostsListProps) {
           <NewPost onCancel={closeModalHandler} onAddPost={addPostHandler} />
         </Modal>
       )}
-      {posts.length > 0 && (
+      {!isLoading && posts.length > 0 && (
         <ul className={classes.posts}>
           {posts.map(post => (
             <PostItem key={post.id} body={post.body} author={post.author} />
           ))}
         </ul>
       )}
-      {posts.length === 0 && (
+      {!isLoading && posts.length === 0 && (
         <div style={{ textAlign: 'center', color: 'white' }}>
           <h2>There are no posts yet.</h2>
           <p>Start adding some!</p>
+        </div>
+      )}
+      {isLoading && (
+        <div style={{ textAlign: 'center', color: 'white' }}>
+          <p>Loading posts...</p>
         </div>
       )}
     </Fragment>
