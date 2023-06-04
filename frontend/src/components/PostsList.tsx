@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 
 import NewPost, { IPostData } from './NewPost';
 import PostItem from './PostItem';
@@ -12,8 +12,23 @@ type PostsListProps = {
   onCloseModal: () => void;
 };
 
+type JSONResponse = {
+  posts: Post[];
+};
+
 function PostsList({ modalIsVisible, onCloseModal }: PostsListProps) {
   const [posts, setPosts] = useState<Post[]>([]);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      const response = await fetch('/api/posts');
+      const responseData: JSONResponse = await response.json();
+
+      setPosts(responseData.posts);
+    }
+
+    fetchPosts();
+  }, []);
 
   const addPostHandler = (postData: IPostData) => {
     const post = new Post(postData.body, postData.author);
