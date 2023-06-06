@@ -1,22 +1,16 @@
 import React, { Fragment, useEffect, useState } from 'react';
 
-import NewPost, { IPostData } from './NewPost';
+import { IPostData } from '../routes/NewPost';
 import PostItem from './PostItem';
 import classes from './PostsList.module.css';
-import Modal from './UI/Modal';
 
 import Post from './models/Post.model';
-
-type PostsListProps = {
-  modalIsVisible: boolean;
-  onCloseModal: () => void;
-};
 
 type JSONResponse = {
   posts: Post[];
 };
 
-function PostsList({ modalIsVisible, onCloseModal }: PostsListProps) {
+function PostsList() {
   const [isLoading, setIsLoading] = useState(false);
   const [posts, setPosts] = useState<Post[]>([]);
 
@@ -45,17 +39,8 @@ function PostsList({ modalIsVisible, onCloseModal }: PostsListProps) {
     setPosts(prevPosts => [...prevPosts, post]);
   };
 
-  const closeModalHandler = () => {
-    onCloseModal();
-  };
-
   return (
     <Fragment>
-      {modalIsVisible && (
-        <Modal onClose={closeModalHandler}>
-          <NewPost onCancel={closeModalHandler} onAddPost={addPostHandler} />
-        </Modal>
-      )}
       {!isLoading && posts.length > 0 && (
         <ul className={classes.posts}>
           {posts.map(post => (
