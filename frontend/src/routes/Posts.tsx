@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import PostsList from '../components/PostsList';
 
 function Posts() {
   return (
-    <main>
-      <PostsList />
+    <Fragment>
       <Outlet />
-    </main>
+      <main>
+        <PostsList />
+      </main>
+    </Fragment>
   );
 }
 

@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 import classes from './NewPost.module.css';
 import Modal from '../components/UI/Modal';
+import { Link } from 'react-router-dom';
 
 export interface IPostData {
   body: string;
@@ -32,7 +33,7 @@ function NewPost() {
   };
 
   return (
-    <Modal onClose={() => ({})}>
+    <Modal>
       <form className={classes.form} onSubmit={submitHandler}>
         <p>
           <label htmlFor="body">Text</label>
@@ -48,7 +49,7 @@ function NewPost() {
           />
         </p>
         <p className={classes.actions}>
-          <button type="button">Cancel</button>
+          <Link to="..">Cancel</Link>
           <button>Submit</button>
         </p>
       </form>
