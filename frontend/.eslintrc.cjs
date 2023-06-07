@@ -9,9 +9,8 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  plugins: ['react', 'react-refresh'],
+  plugins: ['react'],
   rules: {
     'react/react-in-jsx-scope': 'error',
-    'react-refresh/only-export-components': 'warn',
   },
 };

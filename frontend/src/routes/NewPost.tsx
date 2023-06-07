@@ -1,13 +1,10 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
-
-import classes from './NewPost.module.css';
-import Modal from '../components/UI/Modal';
 import { Link } from 'react-router-dom';
 
-export interface IPostData {
-  body: string;
-  author: string;
-}
+import Modal from '../components/UI/Modal';
+import classes from './NewPost.module.css';
+
+import Post from '../components/models/Post.model';
 
 function NewPost() {
   const [enteredBody, setEnteredBody] = useState('');
@@ -24,7 +21,7 @@ function NewPost() {
   const submitHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const postData: IPostData = {
+    const postData: Omit<Post, 'id'> = {
       body: enteredBody,
       author: enteredAuthor,
     };

@@ -2,7 +2,7 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
 import RootLayout from './RootLayout';
-import Posts from './Posts';
+import Posts, { loader as postsLoader } from './Posts';
 import NewPost from './NewPost';
 
 const router = createBrowserRouter([
@@ -13,6 +13,7 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <Posts />,
+        loader: postsLoader,
         children: [{ path: 'create-post', element: <NewPost /> }],
       },
     ],
