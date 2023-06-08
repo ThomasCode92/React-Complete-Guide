@@ -1,9 +1,7 @@
-class Post {
-  id: number;
-
-  constructor(public body: string, public author: string) {
-    this.id = Math.random();
-  }
+interface Post {
+  id?: string;
+  author: string;
+  body: string;
 }
 
 export default Post;

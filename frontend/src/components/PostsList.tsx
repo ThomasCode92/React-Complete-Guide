@@ -5,20 +5,9 @@ import PostItem from './PostItem';
 import classes from './PostsList.module.css';
 
 import { loader } from '../routes/Posts';
-import Post from './models/Post.model';
 
 function PostsList() {
   const posts = useLoaderData() as Awaited<ReturnType<typeof loader>>;
-
-  const addPostHandler = (postData: Omit<Post, 'id'>) => {
-    const post = new Post(postData.body, postData.author);
-
-    fetch('/api/posts', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(post),
-    });
-  };
 
   return (
     <Fragment>
