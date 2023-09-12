@@ -1,0 +1,14 @@
+{
+  "name": "@tanstackquerydemo/root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "backend:start": "pnpm -F @tanstackquerydemo/backend run start",
+    "frontend:start": "pnpm -F @tanstackquerydemo/frontend run start",
+    "start": "pnpm -r run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
