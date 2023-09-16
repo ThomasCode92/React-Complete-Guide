@@ -3,15 +3,20 @@ import { useMutation } from '@tanstack/react-query';
 
 import Modal from '../UI/Modal.jsx';
 import EventForm from './EventForm.jsx';
+import ErrorBlock from '../UI/ErrorBlock.jsx';
 
 import { createNewEvent } from '../../utils/http.js';
-import ErrorBlock from '../UI/ErrorBlock.jsx';
+import { queryClient } from '../../utils/query.js';
 
 export default function NewEvent() {
   const navigate = useNavigate();
 
   const { isPending, isError, error, mutate } = useMutation({
     mutationFn: createNewEvent,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['events'] });
+      navigate('/events');
+    },
   });
 
   function handleSubmit(formData) {
