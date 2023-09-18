@@ -7,6 +7,7 @@ import LoadingIndicator from '../UI/LoadingIndicator.jsx';
 import ErrorBlock from '../UI/ErrorBlock.jsx';
 
 import { fetchEvent, updateEvent } from '../../utils/http.js';
+import { queryClient } from '../../utils/query.js';
 
 export default function EditEvent() {
   const navigate = useNavigate();
@@ -19,6 +20,22 @@ export default function EditEvent() {
 
   const { mutate } = useMutation({
     mutationFn: updateEvent,
+    onMutate: async data => {
+      await queryClient.cancelQueries({ queryKey: ['events', id] });
+
+      const newEvent = data.event;
+      const previousEvent = queryClient.getQueryData(['events', id]);
+
+      queryClient.setQueryData(['events', id], newEvent);
+
+      return { previousEvent };
+    },
+    onError: (error, data, context) => {
+      queryClient.setQueryData(['events', id], context.previousEvent);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries(['events', id]);
+    },
   });
 
   function handleSubmit(formData) {
