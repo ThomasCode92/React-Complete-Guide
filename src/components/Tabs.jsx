@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 
-export default function Tabs({ children, buttons }) {
+export default function Tabs({ children, buttons, ButtonContainer }) {
   return (
     <Fragment>
-      <menu>{buttons}</menu>
+      <ButtonContainer>{buttons}</ButtonContainer>
       {children}
     </Fragment>
   );
