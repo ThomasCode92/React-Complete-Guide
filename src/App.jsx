@@ -17,8 +17,7 @@ export default function App() {
       if (prevTurns.length > 0 && prevTurns[0].player === 'X')
         currentPlayer = 'O';
 
-      const updatedTurns = [{ square, player: currentPlayer }, ...prevTurns];
-      return updatedTurns;
+      return [{ square, player: currentPlayer }, ...prevTurns];
     });
   }
 
@@ -37,7 +36,7 @@ export default function App() {
             isActive={activePlayer === 'O'}
           />
         </ol>
-        <GameBoard onSelectSquare={handleSelectSquare} />
+        <GameBoard turns={gameTurns} onSelectSquare={handleSelectSquare} />
       </div>
       <Log />
     </main>
