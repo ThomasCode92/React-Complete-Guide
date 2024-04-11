@@ -41,10 +41,19 @@ export default function App() {
     });
   }
 
+  let winner = null;
+
   for (const combination of WINNING_COMBINATIONS) {
-    const firstSquare = gameBoard;
-    const secondSquare = gameBoard;
-    const thirdSquare = gameBoard;
+    const firstSquare = gameBoard[combination[0].row][combination[0].column];
+    const secondSquare = gameBoard[combination[1].row][combination[1].column];
+    const thirdSquare = gameBoard[combination[2].row][combination[2].column];
+
+    const allSquaresAreEqual =
+      firstSquare &&
+      firstSquare === secondSquare &&
+      firstSquare === thirdSquare;
+
+    if (allSquaresAreEqual) winner = firstSquare;
   }
 
   return (
@@ -62,6 +71,7 @@ export default function App() {
             isActive={activePlayer === 'O'}
           />
         </ol>
+        {winner && <p>You won, {winner}!</p>}
         <GameBoard board={gameBoard} onSelectSquare={handleSelectSquare} />
       </div>
       <Log turns={gameTurns} />
