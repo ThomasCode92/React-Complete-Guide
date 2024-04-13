@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import GameBoard from './components/GameBoard';
+import GameOver from './components/GameOver';
 import Player from './components/Player';
 import Log from './components/Log';
 
@@ -56,6 +57,8 @@ export default function App() {
     if (allSquaresAreEqual) winner = firstSquare;
   }
 
+  const hasDraw = gameTurns.length === 9 && !winner;
+
   return (
     <main>
       <div id="game-container">
@@ -71,7 +74,7 @@ export default function App() {
             isActive={activePlayer === 'O'}
           />
         </ol>
-        {winner && <p>You won, {winner}!</p>}
+        {(winner || hasDraw) && <GameOver winner={winner} />}
         <GameBoard board={gameBoard} onSelectSquare={handleSelectSquare} />
       </div>
       <Log turns={gameTurns} />
