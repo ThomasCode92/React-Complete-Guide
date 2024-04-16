@@ -65,7 +65,7 @@ export default function App() {
       firstSquare === secondSquare &&
       firstSquare === thirdSquare;
 
-    if (allSquaresAreEqual) winner = firstSquare;
+    if (allSquaresAreEqual) winner = players[firstSquare];
   }
 
   const hasDraw = gameTurns.length === 9 && !winner;
@@ -78,11 +78,13 @@ export default function App() {
             initialName="Player 1"
             symbol="X"
             isActive={activePlayer === 'X'}
+            onChangeName={handlePlayerNameChange}
           />
           <Player
             initialName="Player 2"
             symbol="O"
             isActive={activePlayer === 'O'}
+            onChangeName={handlePlayerNameChange}
           />
         </ol>
         {(winner || hasDraw) && (
