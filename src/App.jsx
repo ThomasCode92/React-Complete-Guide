@@ -21,11 +21,14 @@ export default function App() {
     }));
   }
 
+  const inputIsValid = userInput.duration > 0;
+
   return (
     <Fragment>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
-      <Results input={userInput} />
+      {inputIsValid && <Results input={userInput} />}
+      {!inputIsValid && <p className="center">Please enter a valid duration</p>}
     </Fragment>
   );
 }
