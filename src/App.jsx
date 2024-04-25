@@ -17,7 +17,7 @@ export default function App() {
   function handleChange(inputIdentifier, value) {
     setUserInput(prevUserInput => ({
       ...prevUserInput,
-      [inputIdentifier]: value,
+      [inputIdentifier]: Number(value),
     }));
   }
 
