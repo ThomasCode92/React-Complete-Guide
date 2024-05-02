@@ -5,6 +5,7 @@
   "material-icon-theme.files.associations": {
     ".tool-versions": "nodejs_alt"
   },
+  "cSpell.ignoreRegExpList": ["url\\((.*?)\\)"],
 
   // IDE Config
   "editor.defaultFormatter": "esbenp.prettier-vscode",
