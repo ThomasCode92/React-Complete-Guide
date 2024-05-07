@@ -6,6 +6,11 @@
     ".tool-versions": "nodejs_alt"
   },
   "cSpell.ignoreRegExpList": ["url\\((.*?)\\)"],
+  "tailwindCSS.experimental.classRegex": [
+    ["Classes \\=([^;]*);", "'([^']*)'"],
+    ["Classes \\=([^;]*);", "\"([^\"]*)\""],
+    ["Classes \\=([^;]*);", "\\`([^\\`]*)\\`"]
+  ],
 
   // IDE Config
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -15,5 +20,6 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "always"
-  }
+  },
+  "files.associations": { "*.css": "tailwindcss" }
 }
