@@ -40,7 +40,6 @@ export default function AuthInputs() {
           invalid={emailNotValid}
           onChange={event => handleInputChange('email', event.target.value)}
         />
-
         <Input
           label="Password"
           type="password"
