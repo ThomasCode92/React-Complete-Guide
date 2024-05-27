@@ -16,3 +16,7 @@ npm run dev       # start development server
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser to view the application.
+
+### Debugging
+
+To start the application in debug mode when encountering a bug, follow these steps. First, execute the debug script by running the command `npm run debug` in the command line interface. Then, initiate the VS Code debugger by clicking the green play icon in the debug panel. This will open a Chrome browser connected to the debugger, enabling inspection and troubleshooting of the application with ease.
