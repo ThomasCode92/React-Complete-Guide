@@ -6,7 +6,8 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
   ],
   "ignorePatterns": ["dist"],
   "settings": { "react": { "version": "18.2" } },
@@ -16,6 +17,7 @@
     "react-refresh/only-export-components": [
       "warn",
       { "allowConstantExport": true }
-    ]
+    ],
+    "prettier/prettier": "warn"
   }
 }
