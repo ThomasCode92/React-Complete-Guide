@@ -1,9 +1,9 @@
-function App() {
+import ProjectsSidebar from './components/ProjectsSidebar';
+
+export default function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
+    <main>
+      <ProjectsSidebar />
+    </main>
   );
 }
-
-export default App;
