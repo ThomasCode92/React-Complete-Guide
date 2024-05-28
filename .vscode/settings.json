@@ -6,9 +6,9 @@
     ".tool-versions": "nodejs_alt"
   },
   "tailwindCSS.experimental.classRegex": [
-    ["Classes\\s*\\+?=\\s*([^;]*);", "'([^']*)'"],
-    ["Classes\\s*\\+?=\\s*([^;]*);", "\"([^\"]*)\""],
-    ["Classes\\s*\\+?=\\s*([^;]*);", "\\`([^\\`]*)\\`"]
+    ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "'([^']*)'"],
+    ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "\"([^\"]*)\""],
+    ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "\\`([^\\`]*)\\`"]
   ],
   "cSpell.ignoreWords": ["tailwindcss"],
 
