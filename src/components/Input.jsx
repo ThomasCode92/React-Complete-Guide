@@ -1,6 +1,8 @@
+import { forwardRef } from 'react';
+
 import tw from '../utils/tailwind-template';
 
-export default function Input({ label, textarea, ...props }) {
+const Input = forwardRef(function Input({ label, textarea, ...props }, ref) {
   const classes = tw`w-full rounded-sm border-b-2 border-stone-300 bg-stone-200 p-1 text-stone-600 focus:border-stone-600 focus:outline-none`;
 
   return (
@@ -9,10 +11,12 @@ export default function Input({ label, textarea, ...props }) {
         {label}
       </label>
       {textarea ? (
-        <textarea className={classes} {...props}></textarea>
+        <textarea ref={ref} className={classes} {...props}></textarea>
       ) : (
-        <input className={classes} {...props} />
+        <input ref={ref} className={classes} {...props} />
       )}
     </p>
   );
-}
+});
+
+export default Input;
