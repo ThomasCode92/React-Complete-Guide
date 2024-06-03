@@ -3,7 +3,7 @@ import { Fragment, useRef } from 'react';
 import Input from './Input';
 import Modal from './Modal';
 
-export default function NewProject({ onAddProject }) {
+export default function NewProject({ onAddProject, onCancel }) {
   const titleInputRef = useRef();
   const descriptionInputRef = useRef();
   const dueDateInputRef = useRef();
@@ -32,14 +32,21 @@ export default function NewProject({ onAddProject }) {
   return (
     <Fragment>
       <Modal ref={modalRef} buttonCaption="Okay">
-        <h2>Invalid Input</h2>
-        <p>Oops... looks like you forgot to enter a value.</p>
-        <p>Please make sure you provide a valid value for every input field.</p>
+        <h2 className="my-4 text-xl text-stone-700">Invalid Input</h2>
+        <p className="mb-4 text-stone-600">
+          Oops... looks like you forgot to enter a value.
+        </p>
+        <p className="mb-4 text-stone-600">
+          Please make sure you provide a valid value for every input field.
+        </p>
       </Modal>
       <div className="mt-16 w-[35rem]">
         <menu className="my-4 flex items-center justify-end gap-4">
           <li>
-            <button className="text-stone-800 hover:text-stone-950">
+            <button
+              className="text-stone-800 hover:text-stone-950"
+              onClick={onCancel}
+            >
               Cancel
             </button>
           </li>
