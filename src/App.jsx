@@ -46,7 +46,21 @@ export default function App() {
     });
   }
 
-  let content = <SelectedProject project={selectedProject} />;
+  function handleDeleteProject() {
+    setProjectsData(prevState => {
+      return {
+        ...prevState,
+        selectedProjectId: undefined,
+        projects: prevState.projects.filter(
+          project => project.id !== prevState.selectedProjectId,
+        ),
+      };
+    });
+  }
+
+  let content = (
+    <SelectedProject project={selectedProject} onDelete={handleDeleteProject} />
+  );
 
   if (projectsData.selectedProjectId === null) {
     content = (
