@@ -16,6 +16,10 @@ export default function App() {
     project => project.id === projectsData.selectedProjectId,
   );
 
+  const selectedProjectTasks = projectsData.tasks.filter(
+    task => task.projectId === projectsData.selectedProjectId,
+  );
+
   function handleStartAddProject() {
     setProjectsData(prevState => {
       return { ...prevState, selectedProjectId: null };
@@ -72,12 +76,19 @@ export default function App() {
     });
   }
 
-  function handleDeleteTask() {}
+  function handleDeleteTask(taskId) {
+    setProjectsData(prevState => {
+      return {
+        ...prevState,
+        tasks: prevState.tasks.filter(task => task.id !== taskId),
+      };
+    });
+  }
 
   let content = (
     <SelectedProject
       project={selectedProject}
-      tasks={projectsData.tasks}
+      tasks={selectedProjectTasks}
       onDelete={handleDeleteProject}
       onAddTask={handleAddTask}
       onDeleteTask={handleDeleteTask}
@@ -96,7 +107,7 @@ export default function App() {
   }
 
   return (
-    <main className="my-8 flex h-screen gap-8">
+    <main className="flex h-screen gap-8">
       <ProjectsSidebar
         projects={projectsData.projects}
         selectedProjectId={projectsData.selectedProjectId}
