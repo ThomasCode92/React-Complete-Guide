@@ -1,0 +1,23 @@
+{
+  // Extensions
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "material-icon-theme.files.associations": {
+    ".tool-versions": "nodejs_alt"
+  },
+  "cSpell.ignoreWords": ["tailwindcss"],
+
+  // IDE Config
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.linkedEditing": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "always"
+  },
+
+  // JavaScript Specific Config
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false
+}
