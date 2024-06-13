@@ -4,6 +4,8 @@ import Header from './components/Header.jsx';
 import Product from './components/Product.jsx';
 import Shop from './components/Shop.jsx';
 
+import { CartContext } from './store/cart-context.js';
+
 import { DUMMY_PRODUCTS } from './dummy-products.js';
 
 export default function App() {
@@ -68,7 +70,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <CartContext.Provider>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
@@ -80,6 +82,6 @@ export default function App() {
           </li>
         ))}
       </Shop>
-    </>
+    </CartContext.Provider>
   );
 }
