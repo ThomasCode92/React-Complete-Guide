@@ -70,7 +70,7 @@ export default function App() {
   }
 
   return (
-    <CartContext.Provider>
+    <CartContext.Provider value={{ items: [] }}>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
