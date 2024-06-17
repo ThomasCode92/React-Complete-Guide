@@ -1,10 +1,10 @@
 import { CartContext } from '../store/cart-context';
 
-export default function Cart({ onUpdateItemQuantity }) {
+export default function Cart() {
   return (
     <CartContext.Consumer>
-      {cartCtx => {
-        const totalPrice = cartCtx.items.reduce(
+      {({ items, updateItemQuantity }) => {
+        const totalPrice = items.reduce(
           (acc, item) => acc + item.price * item.quantity,
           0,
         );
@@ -12,10 +12,10 @@ export default function Cart({ onUpdateItemQuantity }) {
 
         return (
           <div id="cart">
-            {cartCtx.items.length === 0 && <p>No items in cart!</p>}
-            {cartCtx.items.length > 0 && (
+            {items.length === 0 && <p>No items in cart!</p>}
+            {items.length > 0 && (
               <ul id="cart-items">
-                {cartCtx.items.map(item => {
+                {items.map(item => {
                   const formattedPrice = `$${item.price.toFixed(2)}`;
 
                   return (
@@ -25,15 +25,11 @@ export default function Cart({ onUpdateItemQuantity }) {
                         <span> ({formattedPrice})</span>
                       </div>
                       <div className="cart-item-actions">
-                        <button
-                          onClick={() => onUpdateItemQuantity(item.id, -1)}
-                        >
+                        <button onClick={() => updateItemQuantity(item.id, -1)}>
                           -
                         </button>
                         <span>{item.quantity}</span>
-                        <button
-                          onClick={() => onUpdateItemQuantity(item.id, 1)}
-                        >
+                        <button onClick={() => updateItemQuantity(item.id, 1)}>
                           +
                         </button>
                       </div>
