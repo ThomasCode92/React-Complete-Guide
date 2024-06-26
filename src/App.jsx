@@ -13,6 +13,7 @@ export default function App() {
   const modal = useRef();
   const selectedPlace = useRef();
   const [pickedPlaces, setPickedPlaces] = useState([]);
+  const [availablePlaces, setAvailablePlaces] = useState([]);
 
   navigator.geolocation.getCurrentPosition(position => {
     const sortedPlaces = sortPlacesByDistance(
@@ -20,6 +21,8 @@ export default function App() {
       position.coords.latitude,
       position.coords.longitude,
     );
+
+    setAvailablePlaces(sortedPlaces);
   });
 
   function handleStartRemovePlace(id) {
@@ -74,7 +77,7 @@ export default function App() {
         />
         <Places
           title="Available Places"
-          places={AVAILABLE_PLACES}
+          places={availablePlaces}
           onSelectPlace={handleSelectPlace}
         />
       </main>
