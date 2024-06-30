@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import DeleteConfirmation from './components/DeleteConfirmation.jsx';
 import Modal from './components/Modal.jsx';
@@ -58,7 +58,7 @@ export default function App() {
     }
   }
 
-  function handleRemovePlace() {
+  const handleRemovePlace = useCallback(function handleRemovePlace() {
     setPickedPlaces(prevPickedPlaces =>
       prevPickedPlaces.filter(place => place.id !== selectedPlace.current),
     );
@@ -67,7 +67,7 @@ export default function App() {
     const storedIds = JSON.parse(localStorage.getItem('selectedPlaces')) || [];
     const ids = storedIds.filter(id => id !== selectedPlace.current);
     localStorage.setItem('selectedPlaces', JSON.stringify(ids));
-  }
+  }, []);
 
   return (
     <>
