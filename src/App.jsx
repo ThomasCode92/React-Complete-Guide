@@ -7,7 +7,7 @@ export default function App() {
   return (
     <Fragment>
       <Header />
-      <main id="quiz">
+      <main>
         <Quiz />
       </main>
     </Fragment>
