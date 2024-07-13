@@ -13,8 +13,6 @@ export default function Answers({
     shuffledAnswers.current.sort(() => Math.random() - 0.5);
   }
 
-  console.log(answerState);
-
   return (
     <ul id="answers">
       {shuffledAnswers.current.map(answer => {
