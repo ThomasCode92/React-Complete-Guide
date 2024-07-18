@@ -5,24 +5,8 @@ import MinusIcon from '../UI/Icons/MinusIcon';
 import PlusIcon from '../UI/Icons/PlusIcon';
 import CounterOutput from './CounterOutput';
 
+import isPrime from '../../isPrime.js';
 import { log } from '../../log.js';
-
-function isPrime(number) {
-  log('Calculating if is prime number', 2, 'other');
-  if (number <= 1) {
-    return false;
-  }
-
-  const limit = Math.sqrt(number);
-
-  for (let i = 2; i <= limit; i++) {
-    if (number % i === 0) {
-      return false;
-    }
-  }
-
-  return true;
-}
 
 // Please note that 'memo' is not really necessary here,
 // but it's used to demonstrate the concept
