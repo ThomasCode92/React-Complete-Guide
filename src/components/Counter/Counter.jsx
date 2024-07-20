@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useMemo, useState } from 'react';
 
 import IconButton from '../UI/IconButton';
 import MinusIcon from '../UI/Icons/MinusIcon';
@@ -12,9 +12,13 @@ import { log } from '../../log.js';
 // but it's used to demonstrate the concept
 const Counter = memo(function Counter({ initialCount }) {
   log('<Counter /> rendered', 1);
-  const initialCountIsPrime = isPrime(initialCount);
 
   const [counter, setCounter] = useState(initialCount);
+
+  const initialCountIsPrime = useMemo(
+    () => isPrime(initialCount),
+    [initialCount],
+  );
 
   const handleDecrement = useCallback(function handleDecrement() {
     setCounter(prevCounter => prevCounter - 1);
