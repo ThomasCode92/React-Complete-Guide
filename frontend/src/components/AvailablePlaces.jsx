@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import Places from './Places.jsx';
 
 export default function AvailablePlaces({ onSelectPlace }) {
+  const [availablePlaces, setAvailablePlaces] = useState([]);
+
+  // Send http request to get available places
+
   return (
     <Places
       title="Available Places"
-      places={[]}
+      places={availablePlaces}
       fallbackText="No places available."
       onSelectPlace={onSelectPlace}
     />
