@@ -3,9 +3,10 @@
 Create your personal collection of places you would like to visit or have already explored. Let your travel dreams and memories come to life in one beautiful compilation. 🌄🏖️
 
 **About this Repository**<br />
-🌐 Explore Data Fetching in [React](https://react.dev/) with this '_PlaceFinder_' application from [React - The Complete Guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/).<br />
-⭐ Sending and Receiving Data via HTTP.<br />
-🔍 How to Connect a Backend/ Database, Fetching Data & Sending Data!
+🌐 Explore Data Fetching and Custom Hooks in [React](https://react.dev/) with this '_PlaceFinder_' application from [React - The Complete Guide](https://www.udemy.com/course/react-the-complete-guide-incl-redux/).<br />
+⭐ Sending and Receiving Data via HTTP & Creating and Using Custom React Hooks.<br />
+📡 How to Connect a Backend/ Database, Fetching Data & Sending Data!<br />
+🪝 Rules of Hooks, Why Custom Hooks, Creating Custom Hooks and Using Custom Hooks!
 
 In the course, this project was initially named placefinder. However, since this name was already taken by an [existing project](https://github.com/ThomasCode92/placepicker), a slightly different name was chosen instead.
 
