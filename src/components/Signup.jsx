@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 export default function Signup() {
+  const [emailIsValid, setEmailIsValid] = useState(true);
+
   function handleSubmit(event) {
     event.preventDefault();
 
@@ -12,6 +16,11 @@ export default function Signup() {
     event.target.reset();
   }
 
+  function handleValidateEmail(event) {
+    const enteredValue = event.target.value;
+    setEmailIsValid(enteredValue.includes('@'));
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <h2>Welcome on board!</h2>
@@ -19,7 +28,15 @@ export default function Signup() {
 
       <div className="control">
         <label htmlFor="email">Email</label>
-        <input id="email" type="email" name="email" />
+        <input
+          id="email"
+          type="email"
+          name="email"
+          onChange={handleValidateEmail}
+        />
+        <div className="control-error">
+          {!emailIsValid && <p>Please enter a valid email address</p>}
+        </div>
       </div>
 
       <div className="control-row">
