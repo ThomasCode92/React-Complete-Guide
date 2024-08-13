@@ -13,12 +13,17 @@ export default function Signup() {
 
     console.log(data);
 
-    event.target.reset();
-  }
+    const enteredEmail = data.email;
+    const emailIsValid = enteredEmail.includes('@');
 
-  function handleValidateEmail(event) {
-    const enteredValue = event.target.value;
-    setEmailIsValid(enteredValue.includes('@'));
+    if (!emailIsValid) {
+      return setEmailIsValid(false);
+    }
+
+    setEmailIsValid(true);
+    console.log('Sending HTTP request to sign up...');
+
+    event.target.reset();
   }
 
   return (
@@ -28,12 +33,7 @@ export default function Signup() {
 
       <div className="control">
         <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          onBlur={handleValidateEmail}
-        />
+        <input id="email" type="email" name="email" />
         <div className="control-error">
           {!emailIsValid && <p>Please enter a valid email address</p>}
         </div>
