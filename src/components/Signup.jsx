@@ -32,7 +32,7 @@ export default function Signup() {
           id="email"
           type="email"
           name="email"
-          onChange={handleValidateEmail}
+          onBlur={handleValidateEmail}
         />
         <div className="control-error">
           {!emailIsValid && <p>Please enter a valid email address</p>}
