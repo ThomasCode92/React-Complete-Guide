@@ -26,7 +26,13 @@ export default function Checkout() {
     const formData = new FormData(event.target);
     const customerData = Object.fromEntries(formData.entries());
 
-    console.log(customerData);
+    const order = { items: cartCtx.items, customer: customerData };
+
+    fetch('http://localhost:3000/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ order }),
+    });
   }
 
   function handleCloseCheckout() {
@@ -39,7 +45,7 @@ export default function Checkout() {
         <h2>Checkout</h2>
         <p>Total Amount: {formattedCartTotal}</p>
 
-        <Input id="full-name" label="Full Name" type="text" />
+        <Input id="name" label="Full Name" type="text" />
         <Input id="email" label="E-Mail Address" type="email" />
         <Input id="street" label="Street" type="text" />
 
