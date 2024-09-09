@@ -1,5 +1,5 @@
-import Section from './Section';
 import CoreConcept from './CoreConcept';
+import Section from './Section';
 
 import { CORE_CONCEPTS } from '../data/core-concepts';
 

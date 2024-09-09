@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import Section from './Section';
 import TabButton from './TabButton';
+import Tabs from './Tabs';
 
 import { EXAMPLES } from '../data/examples';
-import Tabs from './Tabs';
 
 export default function Examples() {
   const [selectedTopic, setSelectedTopic] = useState();
