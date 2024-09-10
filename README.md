@@ -10,6 +10,7 @@ Learn React with [this complete guide](https://www.udemy.com/course/react-the-co
 
 ### Table of Content
 
-| Module           | Description                       | Resources                                             |
-| ---------------- | --------------------------------- | ----------------------------------------------------- |
-| React Essentials | Basics of Components, JSX & State | [react-essentials](./complete-path/react-essentials/) |
+| Module                       | Description                       | Resources                                                                                                                                     |
+| ---------------------------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| React Essentials             | Basics of Components, JSX & State | [Folder](./complete-path/react-essentials/) - [GitHub](https://github.com/ThomasCode92/react-complete-guide/commits/react-essentials)         |
+| React Essentials - Deep Dive | Beyond the Basics                 | [Folder](./complete-path/essentials-deep-dive/) - [GitHub](https://github.com/ThomasCode92/react-complete-guide/commits/essentials-deep-dive) |
