@@ -10,7 +10,8 @@ Learn React with [this complete guide](https://www.udemy.com/course/react-the-co
 
 ### Table of Content
 
-| Module                       | Description                       | Resources                                                                                                                                     |
-| ---------------------------- | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| React Essentials             | Basics of Components, JSX & State | [Folder](./complete-path/react-essentials/) - [GitHub](https://github.com/ThomasCode92/react-complete-guide/commits/react-essentials)         |
-| React Essentials - Deep Dive | Beyond the Basics                 | [Folder](./complete-path/essentials-deep-dive/) - [GitHub](https://github.com/ThomasCode92/react-complete-guide/commits/essentials-deep-dive) |
+| Module                               | Description                         | Resources                                                                                                                                     |
+| ------------------------------------ | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| React Essentials                     | Basics of Components, JSX & State   | [Folder](./complete-path/react-essentials/) - [GitHub](https://github.com/ThomasCode92/react-complete-guide/commits/react-essentials)         |
+| React Essentials - Deep Dive         | Beyond the Basics                   | [Folder](./complete-path/essentials-deep-dive/) - [GitHub](https://github.com/ThomasCode92/react-complete-guide/commits/essentials-deep-dive) |
+| RReact Essentials - Practice Project | Apply Knowledge & Practice Concepts | [Folder](./complete-path/essentials-practice/) - [GitHub](https://github.com/ThomasCode92/react-complete-guide/commits/essentials-practice)   |
