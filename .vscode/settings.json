@@ -1,7 +1,12 @@
 {
   // Extensions
   "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,  
+  "tailwindCSS.experimental.classRegex": [
+    ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "'([^']*)'"],
+    ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "\"([^\"]*)\""],
+    ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "\\`([^\\`]*)\\`"]
+  ],
 
   // IDE Config
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -12,6 +17,7 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "always"
   },
+  "files.associations": { "*.css": "tailwindcss" },
 
   // JavaScript Specific Config
   "javascript.inlayHints.parameterNames.enabled": "all",
