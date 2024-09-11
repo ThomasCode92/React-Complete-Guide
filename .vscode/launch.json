@@ -13,6 +13,16 @@
       "sourceMapPathOverrides": {
         "webpack:///./*": "${webRoot}/*"
       }
+    },
+    {
+      "name": "Practice Project 2",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/complete-path/practice-project-2",
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${webRoot}/*"
+      }
     }
   ]
 }
