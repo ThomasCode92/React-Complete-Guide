@@ -1,4 +1,4 @@
 {
-  "ignoreWords": ["tailwindcss", "placepicker"],
+  "ignoreWords": ["tailwindcss"],
   "words": []
 }
