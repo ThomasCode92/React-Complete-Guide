@@ -1,11 +1,10 @@
-import React from 'react';
-
 import ProductItem from './ProductItem';
+
 import classes from './Products.module.css';
 
 import DUMMY_PRODUCTS from '../../products.json';
 
-const Products = props => {
+const Products = () => {
   return (
     <section className={classes.products}>
       <h2>Buy your favorite products</h2>

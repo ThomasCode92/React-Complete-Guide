@@ -23,7 +23,7 @@ export const fetchCartData = () => {
         cartActions.replaceCart({
           items: cartData.items || [],
           totalQuantity: cartData.totalQuantity,
-        })
+        }),
       );
     } catch (error) {
       dispatch(
@@ -31,7 +31,7 @@ export const fetchCartData = () => {
           status: 'error',
           title: 'Error!',
           message: 'Fetching cart data failed!',
-        })
+        }),
       );
     }
   };
@@ -44,7 +44,7 @@ export const sendCartData = cartData => {
         status: 'pending',
         title: 'Sending...',
         message: 'Sending cart data!',
-      })
+      }),
     );
 
     const sendRequest = async () => {
@@ -69,7 +69,7 @@ export const sendCartData = cartData => {
           status: 'error',
           title: 'Error!',
           message: 'Sending cart data failed!',
-        })
+        }),
       );
     }
 
@@ -78,7 +78,7 @@ export const sendCartData = cartData => {
         status: 'success',
         title: 'Success!',
         message: 'Sent cart data successfully!',
-      })
+      }),
     );
   };
 };
