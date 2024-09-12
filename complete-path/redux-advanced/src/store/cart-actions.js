@@ -1,12 +1,10 @@
-import { uiActions } from './ui-slice';
 import { cartActions } from './cart-slice';
-
-const FIREBASE_URL = process.env.REACT_APP_FIREBASE_URL;
+import { uiActions } from './ui-slice';
 
 export const fetchCartData = () => {
   return async dispatch => {
     const fetchData = async () => {
-      const response = await fetch(FIREBASE_URL + '/cart.json');
+      const response = await fetch('/cart');
 
       if (!response.ok) {
         throw new Error('Sending cart data failed.');
@@ -48,7 +46,7 @@ export const sendCartData = cartData => {
     );
 
     const sendRequest = async () => {
-      const response = await fetch(FIREBASE_URL + '/cart.json', {
+      const response = await fetch('/cart', {
         method: 'PUT',
         body: JSON.stringify({
           items: cartData.items,
@@ -64,7 +62,7 @@ export const sendCartData = cartData => {
     try {
       await sendRequest();
     } catch (error) {
-      dispatch(
+      return dispatch(
         uiActions.showNotification({
           status: 'error',
           title: 'Error!',

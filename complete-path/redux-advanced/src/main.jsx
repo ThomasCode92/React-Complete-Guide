@@ -6,9 +6,17 @@ import './index.css';
 
 import store from './store';
 
+async function enableMocking() {
+  const { worker } = await import('./mocks/browser');
+  return worker.start();
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-);
+
+enableMocking().then(() => {
+  root.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+  );
+});
