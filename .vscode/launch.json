@@ -23,6 +23,16 @@
       "sourceMapPathOverrides": {
         "webpack:///./*": "${webRoot}/*"
       }
+    },
+    {
+      "name": "Practice Project 3",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/complete-path/practice-project-3/frontend",
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${webRoot}/*"
+      }
     }
   ]
 }
