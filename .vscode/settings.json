@@ -1,7 +1,7 @@
 {
   // Extensions
   "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.codeLens.authors.enabled": false,  
+  "gitlens.codeLens.authors.enabled": false,
   "tailwindCSS.experimental.classRegex": [
     ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "'([^']*)'"],
     ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "\"([^\"]*)\""],
