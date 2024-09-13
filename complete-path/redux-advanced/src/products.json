@@ -1,0 +1,14 @@
+[
+  {
+    "id": "p1",
+    "title": "My First Book",
+    "description": "The first book I ever wrote",
+    "price": 6
+  },
+  {
+    "id": "p2",
+    "title": "My Second Book",
+    "description": "The second book I ever wrote",
+    "price": 6
+  }
+]
