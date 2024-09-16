@@ -1,4 +1,4 @@
 {
-  "ignoreWords": ["tailwindcss", "reduxjs"],
+  "ignoreWords": ["tailwindcss", "reduxjs", "tanstack"],
   "words": []
 }
