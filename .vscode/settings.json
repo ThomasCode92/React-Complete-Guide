@@ -7,6 +7,9 @@
     ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "\"([^\"]*)\""],
     ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "\\`([^\\`]*)\\`"]
   ],
+  // comment out the next line when working on
+  //a different project than nextjs-introduction
+  "eslint.workingDirectories": ["./complete-path/nextjs-introduction"],
 
   // IDE Config
   "editor.defaultFormatter": "esbenp.prettier-vscode",
