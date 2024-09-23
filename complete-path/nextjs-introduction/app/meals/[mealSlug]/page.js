@@ -3,10 +3,13 @@ import { Fragment } from "react";
 
 import { getMealBySlug } from "@/lib/meals";
 
+import { notFound } from "next/navigation";
 import styles from "./page.module.css";
 
 export default function MealDetailsPage({ params }) {
   const meal = getMealBySlug(params.mealSlug);
+
+  if (!meal) notFound();
 
   meal.instructions = meal.instructions.replace(/\n/g, "<br>");
 
