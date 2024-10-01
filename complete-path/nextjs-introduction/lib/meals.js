@@ -1,4 +1,6 @@
 import sql from "better-sqlite3";
+import slugify from "slugify";
+import xss from "xss";
 
 const db = sql("database/meals.db");
 
@@ -9,4 +11,9 @@ export async function getAllMeals() {
 
 export function getMealBySlug(slug) {
   return db.prepare("SELECT * FROM meals WHERE slug = ?").get(slug);
+}
+
+export function saveMeal(meal) {
+  meal.slug = slugify(meal.title, { lower: true });
+  meal.instructions = xss(meal.instructions);
 }
