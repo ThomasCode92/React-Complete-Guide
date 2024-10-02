@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import ImagePicker from "@/components/Images/ImagePicker";
 import { shareMeal } from "@/lib/actions";
 
+import MealsFormSubmit from "@/components/meals/MealsFormSubmit";
 import styles from "./page.module.css";
 
 export default function ShareMealPage() {
@@ -45,7 +46,7 @@ export default function ShareMealPage() {
           </p>
           <ImagePicker label="Your image" name="image" />
           <p className={styles.actions}>
-            <button type="submit">Share Meal</button>
+            <MealsFormSubmit />
           </p>
         </form>
       </main>
