@@ -8,6 +8,11 @@ import { getAllMeals } from "@/lib/meals";
 
 import styles from "./page.module.css";
 
+export const metadata = {
+  title: "All Meals",
+  description: "Browse the delicious meals shared by our vibrant community.",
+};
+
 async function Meals() {
   const meals = await getAllMeals();
   return <MealsGrid meals={meals} />;
