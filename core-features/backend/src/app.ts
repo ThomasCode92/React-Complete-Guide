@@ -21,14 +21,14 @@ app.get(
   async (
     req: Request,
     res: Response<{ posts: Post[] }>,
-    next: NextFunction
+    next: NextFunction,
   ) => {
     const storedPosts = await getStoredPosts();
     await new Promise<void>((resolve, reject) =>
-      setTimeout(() => resolve(), 1500)
+      setTimeout(() => resolve(), 1500),
     );
     res.json({ posts: storedPosts });
-  }
+  },
 );
 
 app.get(
@@ -36,12 +36,12 @@ app.get(
   async (
     req: Request<{ id: string }>,
     res: Response<{ post: Post }>,
-    next: NextFunction
+    next: NextFunction,
   ) => {
     const storedPosts = await getStoredPosts();
     const post = storedPosts.find(post => post.id === req.params.id);
     res.json({ post });
-  }
+  },
 );
 
 app.post(
@@ -49,7 +49,7 @@ app.post(
   async (
     req: Request<{}, {}, { body: string; author: string }>,
     res: Response<{ message: string; post: Post }>,
-    next: NextFunction
+    next: NextFunction,
   ) => {
     const existingPosts = await getStoredPosts();
     const postData = req.body;
@@ -57,7 +57,7 @@ app.post(
     const updatedPosts = [newPost, ...existingPosts];
     await storePosts(updatedPosts);
     res.status(201).json({ message: 'Stored new post.', post: newPost });
-  }
+  },
 );
 
 app.listen(8080);
