@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from 'react';
-
 import AccordionContent from './AccordionContent';
 import AccordionItem from './AccordionItem';
 import AccordionTitle from './AccordionTitle';
