@@ -1,0 +1,13 @@
+{
+  "name": "react-complete-guide",
+  "version": "1.0.0",
+  "description": "Dive in and learn React.js from scratch!",
+  "scripts": {
+    "cleanup": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
+  },
+  "keywords": [
+    "react",
+    "course"
+  ],
+  "author": "ThomasCode92 & Academind"
+}

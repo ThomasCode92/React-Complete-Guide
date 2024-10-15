@@ -7,9 +7,12 @@
     ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "\"([^\"]*)\""],
     ["[cC]lasses\\s*\\+?=\\s*([^;]*);", "\\`([^\\`]*)\\`"]
   ],
+  "material-icon-theme.files.associations": {
+    ".tool-versions": "nodejs_alt"
+  },
   // comment out the next line when working on
   //a different project than nextjs-introduction
-  "eslint.workingDirectories": ["./complete-path/nextjs-introduction"],
+  // "eslint.workingDirectories": ["./complete-path/nextjs-introduction"],
 
   // IDE Config
   "editor.defaultFormatter": "esbenp.prettier-vscode",
